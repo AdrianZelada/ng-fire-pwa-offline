@@ -1,0 +1,18 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-list role="list">
+      <mat-list-item role="listitem" routerLink="/handle">Control de Gastos</mat-list-item>
+      <mat-list-item role="listitem" routerLink="/products">Productos</mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle
+      </button>
+      <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+
+
+</mat-drawer-container>
