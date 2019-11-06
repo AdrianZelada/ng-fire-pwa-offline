@@ -9,15 +9,28 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { ProductsComponent } from './products/products.component';
 import { HandleMoneyComponent } from './handle-money/handle-money.component';
-import {MatListModule, MatSidenavModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatInputModule,
+  MatListModule,
+  MatSelectModule,
+  MatSidenavModule, MatTableModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CategoryComponent } from './category/category.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLayoutComponent,
     ProductsComponent,
-    HandleMoneyComponent
+    HandleMoneyComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +39,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatButtonModule,
+    MatTableModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

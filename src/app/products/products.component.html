@@ -1,1 +1,38 @@
-<p>products works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Products</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Select">
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="(products$ | async) as products; else loading">
+  <mat-list role="list" *ngIf="products.length > 0; else empty">
+    <mat-list-item role="listitem" *ngFor="let item of products"> {{item.name}} </mat-list-item>
+  </mat-list>
+  <ng-template #empty>
+    List Empty
+  </ng-template>
+</mat-card>
+
+<ng-template #loading>
+  <mat-card>
+    Loading Data ....
+  </mat-card>
+</ng-template>
+

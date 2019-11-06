@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {MainLayoutComponent} from './main-layout/main-layout.component';
 import {HandleMoneyComponent} from './handle-money/handle-money.component';
-import {ProductsComponent} from './products/products.component';
+import {CategoryComponent} from './category/category.component';
 
 
 const routes: Routes = [
@@ -20,8 +20,8 @@ const routes: Routes = [
         component: HandleMoneyComponent
       },
       {
-        path: 'products',
-        component: ProductsComponent
+        path: 'category',
+        component: CategoryComponent
       }
     ]
   }
